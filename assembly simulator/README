@@ -1,0 +1,50 @@
+To compile code: make proj3
+To run: ./proj3
+    
+
+CODE ANALYSIS: 
+The text file name is hardcoded
+The function readFile is used inorder to get the contects of the file
+ReadFile function:
+while the file has a next line
+the line is insterted into a stringstream
+while the string stream has a word
+we check if the word starts with any of the digits 1 through 9
+if it does we add it to the operands array, but first we convert it from hex to a long int with the function wordToInt
+if not we add it to the op string
+checks the op word and performs the operation according to op
+
+wordToInt function:
+takes as argument a string which is out hex number
+saves in num the substring without the 0x
+convert the hex num with std::hex and passes it into a stringstream
+we pass the stringstream into the long number variable and
+
+intoToHexString function:
+takes as arguments a long number 
+converts the number to hex and passes the number in a stringstream 
+converts the stringstream into a string and stores it  in the string result
+returns result
+
+contain function:
+takes as arguments a word and an array
+checks if the word contains any of the elements of the array  
+
+add, sub, bitAnd, bitor, bitXor:
+parameters are the array containing the register values and the array r containing the registers mentioned in the instruction
+the array r contains register strings in the form RX. In order toupdate the registers we need to know X. which is read in the first 2 lines of the functions.
+then the operands are beeing read using the indexes found in the previous steps
+the calculation is being permormed and then the index of the destination register is read
+the destination register is being updated
+the updated registers array is being printed.
+
+asr, lsr, lsl:
+parameters are the array containing the register values, the array r containing the registers mentioned in the instruction and the number of shifts 
+the index of the destination register is read
+the index of the register to be shifted is read
+get the number to be shifted
+shifts number 
+the destination register is being updated
+the updated registers array is being printed.
+
+
